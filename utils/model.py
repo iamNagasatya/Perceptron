@@ -1,6 +1,7 @@
 import os
 import joblib
 import numpy as np
+import logging
 
 
 class Perceptron:
@@ -11,8 +12,8 @@ class Perceptron:
 
             self.weights = np.random.rand(3)*1e-4
 
-            print("Initial weights are \n")
-            print(self.weights)
+            logging.info("Initial weights are \n")
+            logging.info(self.weights)
         
     def _z_value(self, inputs, weights):
         return np.dot(inputs, weights)
@@ -27,21 +28,22 @@ class Perceptron:
         x_with_bias = np.c_[x, -np.ones((len(x), 1))]
         
         for epoch in range(1, self.epochs+1):
-            print("#"*50)
-            print(f"\n Epoch {epoch}/{self.epochs}\n")
+            logging.info("#"*50)
+            logging.info(f"\n Epoch {epoch}/{self.epochs}\n")
             
             z = self._z_value(x_with_bias, self.weights)
             y_hat = self._activation_func(z)
-            print(f"Prediction is : is {y_hat}\n")
+            logging.info(f"Prediction is : is {y_hat}\n")
             
             error = y - y_hat
-            print(f"Error : is\n{error}\n")
+            logging.info(f"Error : is\n{error}\n")
             
             self.weights = self.weights + self.eta * np.dot(x_with_bias.T, error)
-            print(f"Updated weights are  : is\n{self.weights}\n")
+            logging.info(f"Updated weights are  : is\n{self.weights}\n")
         
         self.error = error
-        # print(f"Total loss is {self.error.sum()}")
+        # logging.info(f"Total loss is {self.error.sum()}")
+        logging.info("model fitting complete")
     
     def predict(self, x):
         x.append(-1)
@@ -57,7 +59,7 @@ class Perceptron:
         os.makedirs(model_dir, exist_ok=True)
         file_path = os.path.join(model_dir, filename)
         joblib.dump(self, file_path)
-        print(f"Model is save to {file_path}")
+        logging.info(f"Model is save to {file_path}")
         
     def load(self, filename, model_dir="model"):
         """
