@@ -3,7 +3,7 @@ from utils.all_utils import prepare_data
 import pandas as pd
 
 
-def main(data, model_name="or.model", eta=0.1, epochs=10, model_dir="Perceptron Models"):
+def main(data, model_name, eta=0.1, epochs=10, model_dir="Perceptron Models"):
     df = pd.DataFrame(data)
     model = Perceptron(eta, epochs)
 
@@ -21,5 +21,5 @@ def main(data, model_name="or.model", eta=0.1, epochs=10, model_dir="Perceptron 
 
 
 if __name__  == "__main__":
-    data = {"x1":[0, 0, 1, 1], "x2" : [0, 1, 0, 1], "y" : [0, 0, 0, 1]}
-    main(data)
+    data = {"x1":[0, 0, 1, 1], "x2" : [0, 1, 0, 1], "y" : [0, 1, 1, 1]}
+    main(data, model_name="or.model")
