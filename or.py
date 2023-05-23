@@ -1,5 +1,5 @@
-from utils.model import Perceptron
-from utils.all_utils import prepare_data
+from neuronlinear.model import Perceptron, prepare_data
+
 import pandas as pd
 import logging
 import os
@@ -17,11 +17,11 @@ logging.basicConfig(
 
 
 def main(data, model_name, eta=0.1, epochs=10, model_dir="Perceptron Models"):
-    df = pd.DataFrame(data)
-    logging.info(f"This is the raw dataset : \n{df}")
+
+    logging.info(f"This is the raw dataset : \n{data}")
     model = Perceptron(eta, epochs)
 
-    x, y = prepare_data(df, target_col="y")
+    x, y = prepare_data(data, target_col="y")
 
     model.fit(x, y)
 

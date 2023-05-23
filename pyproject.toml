@@ -1,13 +1,9 @@
 [build-system]
-requires = [
-    "setuptools>=61.0",
-    "joblib==1.2.0",
-    "numpy==1.21.6",
-]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "1neuron"
+name = "neuronlinear"
 version = "0.0.1"
 authors = [
   { name="iamNagasatya", email="n.nagasatyasai@gmail.com" },
@@ -19,6 +15,12 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "joblib==1.2.0",
+    "numpy==1.24.3",
+    "pandas==2.0.1",
 ]
 
 [project.urls]

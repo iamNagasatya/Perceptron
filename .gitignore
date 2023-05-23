@@ -159,14 +159,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 .vercel
-test/pyvenv.cfg
-test/Scripts/activate
-test/Scripts/activate.bat
-test/Scripts/Activate.ps1
-test/Scripts/deactivate.bat
-test/Scripts/f2py.exe
-test/Scripts/pip.exe
-test/Scripts/pip3.9.exe
-test/Scripts/pip3.exe
-test/Scripts/python.exe
-test/Scripts/pythonw.exe
+testEnv/
