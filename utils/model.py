@@ -68,7 +68,7 @@ class Perceptron:
             logging.info(f"Error : is\n{error}\n")
             
             self.weights = self.weights + self.eta * np.dot(x_with_bias.T, error)
-            logging.info(f"Updated weights are  : is\n{self.weights}\n")
+            logging.info(f"Updated weights are  : \n{self.weights}\n")
         
         self.error = error
         # logging.info(f"Total loss is {self.error.sum()}")
