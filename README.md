@@ -23,11 +23,11 @@ You can easily install the Perceptron Package using pip:
 ## Quick Start
 Using the neuronlinear Package is straightforward. Here's a simple example to get you started:
 
-```
+```python
 from neuronlinear.model import Perceptron, prepare_data
 
 
-ETA = 0.1 #leaning rate
+ETA = 0.1 #learning rate
 EPOCHS = 10 #epochs count
 
 # Create a Perceptron object
